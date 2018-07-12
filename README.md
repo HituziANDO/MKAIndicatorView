@@ -5,16 +5,16 @@ MKAIndicator makes you to create an indicator view easily.
 
 # Usage
 
-```
+```ObjC
 #import "MKAIndicator.h"
 
-...
+...ObjC
 
 // Show.
 [[MKAIndicator defaultIndicator] showInView:self.view 
                           withTouchDisabled:NO];
 
-...
+...ObjC
 
 // Hide.
 [[MKAIndicator defaultIndicator] hide];
@@ -22,7 +22,7 @@ MKAIndicator makes you to create an indicator view easily.
 
 ### Basic Type
 
-```
+```ObjC
 // Get a singleton instance.
 MKAIndicator *indicator = [MKAIndicator defaultIndicator];
 
@@ -34,7 +34,7 @@ indicator.indicatorType = MKAIndicatorTypeBasic;
 
 ### Custom Type
 
-```
+```ObjC
 // Get a singleton instance.
 MKAIndicator *indicator = [MKAIndicator defaultIndicator];
     
@@ -45,7 +45,7 @@ indicator.indicatorType = MKAIndicatorTypeCustom;
 
 ### Sprite Animation Type
 
-```
+```ObjC
 // Get a singleton instance.
 MKAIndicator *indicator = [MKAIndicator defaultIndicator];
 
@@ -58,7 +58,7 @@ indicator.indicatorType = MKAIndicatorTypeSpriteAnimation;
 
 ### Only Status Bar Type
 
-```
+```ObjC
 // Get a singleton instance.
 MKAIndicator *indicator = [MKAIndicator defaultIndicator];
 
