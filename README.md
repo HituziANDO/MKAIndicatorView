@@ -8,13 +8,13 @@ MKAIndicator makes you to create an indicator view easily.
 ```ObjC
 #import "MKAIndicator.h"
 
-...ObjC
+...
 
 // Show.
 [[MKAIndicator defaultIndicator] showInView:self.view 
                           withTouchDisabled:NO];
 
-...ObjC
+...
 
 // Hide.
 [[MKAIndicator defaultIndicator] hide];
