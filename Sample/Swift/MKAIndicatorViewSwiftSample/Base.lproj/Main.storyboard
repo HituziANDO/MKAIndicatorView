@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MKAIndicatorViewSwiftSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="730-yf-8EQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A0H-tD-eef">
+                                <rect key="frame" x="16" y="465" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <state key="normal" title="Basic"/>
+                                <connections>
+                                    <action selector="basicButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RvG-X8-ARk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5fl-kW-YQt">
+                                <rect key="frame" x="16" y="503" width="54" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <state key="normal" title="Custom"/>
+                                <connections>
+                                    <action selector="customButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2r8-We-ZZ8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TXd-XV-oIm">
+                                <rect key="frame" x="16" y="541" width="109" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <state key="normal" title="SpriteAnimation"/>
+                                <connections>
+                                    <action selector="spriteAnimationButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9Li-lc-VB6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ryP-Dk-1ge">
+                                <rect key="frame" x="16" y="579" width="103" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <state key="normal" title="touchDisabled "/>
+                                <connections>
+                                    <action selector="touchDisabledButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7Ig-1z-mim"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gbk-JD-fEO">
+                                <rect key="frame" x="16" y="617" width="99" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <state key="normal" title="OnlyStatusBar"/>
+                                <connections>
+                                    <action selector="onlyStatusBarButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tH2-dB-3Ih"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x7K-Ld-4fe">
+                                <rect key="frame" x="327" y="617" width="32" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                <state key="normal" title="Stop"/>
+                                <connections>
+                                    <action selector="stopButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="n26-6g-rqo"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="Fmj-8d-vyj"/>
+                    </view>
+                    <connections>
+                        <outlet property="basicButton" destination="A0H-tD-eef" id="WR4-Gp-WrL"/>
+                        <outlet property="customButton" destination="5fl-kW-YQt" id="znV-KW-QMa"/>
+                        <outlet property="onlyStatusBarButton" destination="gbk-JD-fEO" id="9w6-PE-fuw"/>
+                        <outlet property="spriteAnimationButton" destination="TXd-XV-oIm" id="W3f-U6-vhv"/>
+                        <outlet property="stopButton" destination="x7K-Ld-4fe" id="XQT-rF-lxH"/>
+                        <outlet property="touchDisabledButton" destination="ryP-Dk-1ge" id="TjS-Pd-g1W"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>

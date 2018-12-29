@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:MKAIndicatorView/MKAIndicatorView.xcodeproj">
+   </FileRef>
+   <Group
+      location = "container:Sample"
+      name = "Sample">
+      <FileRef
+         location = "group:ObjC/MKAIndicatorViewSample.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:Swift/MKAIndicatorViewSwiftSample.xcodeproj">
+      </FileRef>
+   </Group>
+</Workspace>

@@ -1,0 +1,429 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		5E89BF7721D7C53B0007EF33 /* Universal */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 5E89BF7821D7C53B0007EF33 /* Build configuration list for PBXAggregateTarget "Universal" */;
+			buildPhases = (
+				5E89BF7B21D7C5AC0007EF33 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = Universal;
+			productName = Universal;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		19E59CC0FCD0D30C39354794 /* MKAIndicatorInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E59657282E4C539CD57096 /* MKAIndicatorInterface.m */; };
+		5E89BF5B21D7A3250007EF33 /* MKAIndicatorView.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5E89BF5821D7A3250007EF33 /* MKAIndicatorView.h */; };
+		5E89BF6621D7A48D0007EF33 /* MKAIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E89BF6521D7A48D0007EF33 /* MKAIndicator.m */; };
+		5E89BF6D21D7BCE70007EF33 /* MKAActivityIndicatorViewWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E89BF6C21D7BCE70007EF33 /* MKAActivityIndicatorViewWrapper.m */; };
+		5E89BF7021D7BE8D0007EF33 /* MKACustomIndicatorViewWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E89BF6F21D7BE8D0007EF33 /* MKACustomIndicatorViewWrapper.m */; };
+		5E89BF7321D7C1E20007EF33 /* MKASpriteAnimationIndicatorViewWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E89BF7221D7C1E20007EF33 /* MKASpriteAnimationIndicatorViewWrapper.m */; };
+		5E89BF7621D7C30B0007EF33 /* MKAOnlyStatusBarIndicatorViewWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E89BF7521D7C30B0007EF33 /* MKAOnlyStatusBarIndicatorViewWrapper.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5E89BF5321D7A3250007EF33 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				5E89BF5B21D7A3250007EF33 /* MKAIndicatorView.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		19E59657282E4C539CD57096 /* MKAIndicatorInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKAIndicatorInterface.m; sourceTree = "<group>"; };
+		5E89BF5521D7A3250007EF33 /* libMKAIndicatorView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMKAIndicatorView.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E89BF5821D7A3250007EF33 /* MKAIndicatorView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKAIndicatorView.h; sourceTree = "<group>"; };
+		5E89BF6421D7A4090007EF33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5E89BF6521D7A48D0007EF33 /* MKAIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKAIndicator.m; sourceTree = "<group>"; };
+		5E89BF6721D7A4950007EF33 /* MKAIndicator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKAIndicator.h; sourceTree = "<group>"; };
+		5E89BF6821D7BB360007EF33 /* MKAIndicatorInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKAIndicatorInterface.h; sourceTree = "<group>"; };
+		5E89BF6B21D7BCE70007EF33 /* MKAActivityIndicatorViewWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKAActivityIndicatorViewWrapper.h; sourceTree = "<group>"; };
+		5E89BF6C21D7BCE70007EF33 /* MKAActivityIndicatorViewWrapper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MKAActivityIndicatorViewWrapper.m; sourceTree = "<group>"; };
+		5E89BF6E21D7BE8D0007EF33 /* MKACustomIndicatorViewWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKACustomIndicatorViewWrapper.h; sourceTree = "<group>"; };
+		5E89BF6F21D7BE8D0007EF33 /* MKACustomIndicatorViewWrapper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MKACustomIndicatorViewWrapper.m; sourceTree = "<group>"; };
+		5E89BF7121D7C1E20007EF33 /* MKASpriteAnimationIndicatorViewWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKASpriteAnimationIndicatorViewWrapper.h; sourceTree = "<group>"; };
+		5E89BF7221D7C1E20007EF33 /* MKASpriteAnimationIndicatorViewWrapper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MKASpriteAnimationIndicatorViewWrapper.m; sourceTree = "<group>"; };
+		5E89BF7421D7C30B0007EF33 /* MKAOnlyStatusBarIndicatorViewWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKAOnlyStatusBarIndicatorViewWrapper.h; sourceTree = "<group>"; };
+		5E89BF7521D7C30B0007EF33 /* MKAOnlyStatusBarIndicatorViewWrapper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MKAOnlyStatusBarIndicatorViewWrapper.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5E89BF5221D7A3250007EF33 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		19E5938C19F5AE5E6A0CA449 /* Internal */ = {
+			isa = PBXGroup;
+			children = (
+				5E89BF6B21D7BCE70007EF33 /* MKAActivityIndicatorViewWrapper.h */,
+				5E89BF6C21D7BCE70007EF33 /* MKAActivityIndicatorViewWrapper.m */,
+				5E89BF6E21D7BE8D0007EF33 /* MKACustomIndicatorViewWrapper.h */,
+				5E89BF6F21D7BE8D0007EF33 /* MKACustomIndicatorViewWrapper.m */,
+				5E89BF6821D7BB360007EF33 /* MKAIndicatorInterface.h */,
+				19E59657282E4C539CD57096 /* MKAIndicatorInterface.m */,
+				5E89BF7421D7C30B0007EF33 /* MKAOnlyStatusBarIndicatorViewWrapper.h */,
+				5E89BF7521D7C30B0007EF33 /* MKAOnlyStatusBarIndicatorViewWrapper.m */,
+				5E89BF7121D7C1E20007EF33 /* MKASpriteAnimationIndicatorViewWrapper.h */,
+				5E89BF7221D7C1E20007EF33 /* MKASpriteAnimationIndicatorViewWrapper.m */,
+			);
+			path = Internal;
+			sourceTree = "<group>";
+		};
+		5E89BF4C21D7A3250007EF33 = {
+			isa = PBXGroup;
+			children = (
+				5E89BF5721D7A3250007EF33 /* MKAIndicatorView */,
+				5E89BF5621D7A3250007EF33 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5E89BF5621D7A3250007EF33 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5E89BF5521D7A3250007EF33 /* libMKAIndicatorView.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5E89BF5721D7A3250007EF33 /* MKAIndicatorView */ = {
+			isa = PBXGroup;
+			children = (
+				5E89BF6121D7A3600007EF33 /* Headers */,
+				5E89BF6321D7A3720007EF33 /* Resources */,
+				5E89BF6221D7A3680007EF33 /* Sources */,
+			);
+			path = MKAIndicatorView;
+			sourceTree = "<group>";
+		};
+		5E89BF6121D7A3600007EF33 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				5E89BF6721D7A4950007EF33 /* MKAIndicator.h */,
+				5E89BF5821D7A3250007EF33 /* MKAIndicatorView.h */,
+			);
+			path = Headers;
+			sourceTree = "<group>";
+		};
+		5E89BF6221D7A3680007EF33 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				19E5938C19F5AE5E6A0CA449 /* Internal */,
+				5E89BF6521D7A48D0007EF33 /* MKAIndicator.m */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		5E89BF6321D7A3720007EF33 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5E89BF6421D7A4090007EF33 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5E89BF5421D7A3250007EF33 /* MKAIndicatorView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5E89BF5E21D7A3250007EF33 /* Build configuration list for PBXNativeTarget "MKAIndicatorView" */;
+			buildPhases = (
+				5E89BF5121D7A3250007EF33 /* Sources */,
+				5E89BF5221D7A3250007EF33 /* Frameworks */,
+				5E89BF5321D7A3250007EF33 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MKAIndicatorView;
+			productName = MKAIndicatorView;
+			productReference = 5E89BF5521D7A3250007EF33 /* libMKAIndicatorView.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5E89BF4D21D7A3250007EF33 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1000;
+				ORGANIZATIONNAME = "Hituzi Ando";
+				TargetAttributes = {
+					5E89BF5421D7A3250007EF33 = {
+						CreatedOnToolsVersion = 10.0;
+					};
+					5E89BF7721D7C53B0007EF33 = {
+						CreatedOnToolsVersion = 10.0;
+					};
+				};
+			};
+			buildConfigurationList = 5E89BF5021D7A3250007EF33 /* Build configuration list for PBXProject "MKAIndicatorView" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 5E89BF4C21D7A3250007EF33;
+			productRefGroup = 5E89BF5621D7A3250007EF33 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5E89BF5421D7A3250007EF33 /* MKAIndicatorView */,
+				5E89BF7721D7C53B0007EF33 /* Universal */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5E89BF7B21D7C5AC0007EF33 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# ==============================\n# Set env\n# ==============================\nINFOPLIST=\"${PROJECT_NAME}/Resources/Info.plist\"\nFRAMEWORK_NAME=$(/usr/libexec/PlistBuddy -c \"Print CFBundleName\" ${INFOPLIST})\nBUILD_TARGET_NAME=$FRAMEWORK_NAME\nFRAMEWORK_BUILD_CONFIGURATION=\"${CONFIGURATION}\"\nFRAMEWORK_VERSION_NUMBER=$(/usr/libexec/PlistBuddy -c \"Print CFBundleShortVersionString\" ${INFOPLIST})\nFRAMEWORK_VERSION=A\nFRAMEWORK_BUILD_PATH=\"Framework\"\nFRAMEWORK_DIR=\"${FRAMEWORK_BUILD_PATH}/${FRAMEWORK_NAME}.framework\"\nPACKAGENAME=\"${FRAMEWORK_NAME}-${FRAMEWORK_VERSION_NUMBER}.zip\"\n\n# ==============================\n# Build\n# ==============================\nxcodebuild -configuration ${FRAMEWORK_BUILD_CONFIGURATION} -target ${BUILD_TARGET_NAME} clean\nxcodebuild -configuration ${FRAMEWORK_BUILD_CONFIGURATION} -target ${BUILD_TARGET_NAME} -sdk iphonesimulator\n[ $? != 0 ] && exit 1\nxcodebuild -configuration ${FRAMEWORK_BUILD_CONFIGURATION} -target ${BUILD_TARGET_NAME} -sdk iphoneos\n[ $? != 0 ] && exit 1\n\n# ==============================\n# Make directories\n# ==============================\n[ -d \"${FRAMEWORK_BUILD_PATH}\" ] && rm -rf \"${FRAMEWORK_BUILD_PATH}\"\nmkdir -p ${FRAMEWORK_DIR}\nmkdir -p ${FRAMEWORK_DIR}/Headers\nmkdir -p ${FRAMEWORK_DIR}/Resources\nmkdir -p ${FRAMEWORK_DIR}/Modules\n\n#mkdir -p ${FRAMEWORK_DIR}/Versions\n#mkdir -p ${FRAMEWORK_DIR}/Versions/${FRAMEWORK_VERSION}\n#mkdir -p ${FRAMEWORK_DIR}/Versions/${FRAMEWORK_VERSION}/Resources\n#mkdir -p ${FRAMEWORK_DIR}/Versions/${FRAMEWORK_VERSION}/Headers\n#ln -s ${FRAMEWORK_VERSION} ${FRAMEWORK_DIR}/Versions/Current\n#ln -s Versions/Current/Headers ${FRAMEWORK_DIR}/Headers\n#ln -s Versions/Current/Resources ${FRAMEWORK_DIR}/Resources\n#ln -s Versions/Current/${FRAMEWORK_NAME} ${FRAMEWORK_DIR}/${FRAMEWORK_NAME}\n\n# ==============================\n# Make framework\n# ==============================\nlipo -create \\\nbuild/${FRAMEWORK_BUILD_CONFIGURATION}-iphoneos/lib${FRAMEWORK_NAME}.a \\\nbuild/${FRAMEWORK_BUILD_CONFIGURATION}-iphonesimulator/lib${FRAMEWORK_NAME}.a \\\n-o \"${FRAMEWORK_DIR}/${FRAMEWORK_NAME}\"\n#-o \"${FRAMEWORK_DIR}/Versions/Current/${FRAMEWORK_NAME}\"\n\ncp -Rf \"${PROJECT_NAME}/Headers/\" ${FRAMEWORK_DIR}/Headers/\ncp \"${PROJECT_NAME}/Resources/\" ${FRAMEWORK_DIR}/Resources/\ncp ${INFOPLIST} ${FRAMEWORK_DIR}/Resources/\ncp -Rf \"${PROJECT_NAME}/Modules/\" ${FRAMEWORK_DIR}/Modules/\ncd ${FRAMEWORK_BUILD_PATH}\nchmod -fR 755 \"${FRAMEWORK_NAME}.framework\"\nzip -ry ${PACKAGENAME} $(basename $FRAMEWORK_DIR)\ncd ${SRCROOT}\n\n# ==============================\n# Copy framework to sample app\n# ==============================\ncp -rf ${FRAMEWORK_DIR} ../Sample/ObjC/Framework\ncp -rf ${FRAMEWORK_DIR} ../Sample/Swift/Framework\n\n\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5E89BF5121D7A3250007EF33 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5E89BF7321D7C1E20007EF33 /* MKASpriteAnimationIndicatorViewWrapper.m in Sources */,
+				5E89BF6621D7A48D0007EF33 /* MKAIndicator.m in Sources */,
+				5E89BF6D21D7BCE70007EF33 /* MKAActivityIndicatorViewWrapper.m in Sources */,
+				5E89BF7021D7BE8D0007EF33 /* MKACustomIndicatorViewWrapper.m in Sources */,
+				5E89BF7621D7C30B0007EF33 /* MKAOnlyStatusBarIndicatorViewWrapper.m in Sources */,
+				19E59CC0FCD0D30C39354794 /* MKAIndicatorInterface.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		5E89BF5C21D7A3250007EF33 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		5E89BF5D21D7A3250007EF33 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5E89BF5F21D7A3250007EF33 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5EBK5DQGGP;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "arm64 armv7 armv7s i386 x86_64";
+			};
+			name = Debug;
+		};
+		5E89BF6021D7A3250007EF33 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5EBK5DQGGP;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "arm64 armv7 armv7s i386 x86_64";
+			};
+			name = Release;
+		};
+		5E89BF7921D7C53B0007EF33 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5EBK5DQGGP;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "arm64 armv7 armv7s i386 x86_64";
+			};
+			name = Debug;
+		};
+		5E89BF7A21D7C53B0007EF33 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5EBK5DQGGP;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "arm64 armv7 armv7s i386 x86_64";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5E89BF5021D7A3250007EF33 /* Build configuration list for PBXProject "MKAIndicatorView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5E89BF5C21D7A3250007EF33 /* Debug */,
+				5E89BF5D21D7A3250007EF33 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5E89BF5E21D7A3250007EF33 /* Build configuration list for PBXNativeTarget "MKAIndicatorView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5E89BF5F21D7A3250007EF33 /* Debug */,
+				5E89BF6021D7A3250007EF33 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5E89BF7821D7C53B0007EF33 /* Build configuration list for PBXAggregateTarget "Universal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5E89BF7921D7C53B0007EF33 /* Debug */,
+				5E89BF7A21D7C53B0007EF33 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5E89BF4D21D7A3250007EF33 /* Project object */;
+}
