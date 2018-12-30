@@ -1,28 +1,75 @@
-MKAIndicator
+MKAIndicatorView
 ===
 
-MKAIndicator makes you to create an indicator view easily.
+***MKAIndicatorView makes you to create the powerful indicator view easily.***
 
-# Usage
+## Include in your iOS app
 
-```ObjC
-#import "MKAIndicator.h"
+### CocoaPods
 
-...
+MKAIndicatorView is available through [CocoaPods](http://cocoapods.org). To install
+it, simply add the following line to your Podfile:
 
-// Show.
-[[MKAIndicator defaultIndicator] showInView:self.view 
-                          withTouchDisabled:NO];
-
-...
-
-// Hide.
-[[MKAIndicator defaultIndicator] hide];
+```ruby
+pod "MKAIndicatorView"
 ```
+
+### Manual Installation
+
+1. Download latest [MKAIndicatorView](https://github.com/HituziANDO/MKAIndicatorView/releases)
+1. Drag & Drop MKAIndicatorView.framework into your Xcode project
+
+
+## Usage
+
+1. Import the module
+	
+	**Objective-C**
+	
+	```objc
+	#import <MKAIndicatorView/MKAIndicatorView.h>
+	```
+
+	**Swift**
+	
+	```swift
+	import MKAIndicatorView
+	```
+
+2. Show the indicator
+	
+	**Objective-C**
+	
+	```objc
+	[[MKAIndicator defaultIndicator] showInView:self.view 
+                              withTouchDisabled:NO];
+	```
+	
+	**Swift**
+	
+	```swift
+	MKAIndicator.default().show(in: self.view, withTouchDisabled: false)
+	```
+
+3. Hide the indicator
+	
+	**Objective-C**
+	
+	```objc
+	[[MKAIndicator defaultIndicator] hide];
+	```
+	
+	**Swift**
+	
+	```swift
+	MKAIndicator.default().hide()
+	```
 
 ### Basic Type
 
-```ObjC
+**Objective-C**
+
+```objc
 // Get a singleton instance.
 MKAIndicator *indicator = [MKAIndicator defaultIndicator];
 
@@ -34,7 +81,9 @@ indicator.indicatorType = MKAIndicatorTypeBasic;
 
 ### Custom Type
 
-```ObjC
+**Objective-C**
+
+```objc
 // Get a singleton instance.
 MKAIndicator *indicator = [MKAIndicator defaultIndicator];
     
@@ -45,7 +94,9 @@ indicator.indicatorType = MKAIndicatorTypeCustom;
 
 ### Sprite Animation Type
 
-```ObjC
+**Objective-C**
+
+```objc
 // Get a singleton instance.
 MKAIndicator *indicator = [MKAIndicator defaultIndicator];
 
@@ -58,7 +109,9 @@ indicator.indicatorType = MKAIndicatorTypeSpriteAnimation;
 
 ### Only Status Bar Type
 
-```ObjC
+**Objective-C**
+
+```objc
 // Get a singleton instance.
 MKAIndicator *indicator = [MKAIndicator defaultIndicator];
 
@@ -66,5 +119,4 @@ MKAIndicator *indicator = [MKAIndicator defaultIndicator];
 indicator.indicatorType = MKAIndicatorTypeOnlyStatusBar;
 ```
 
-# License
-MIT License
+More info, see my [sample project](https://github.com/HituziANDO/MKAIndicatorView/tree/master/Sample).
