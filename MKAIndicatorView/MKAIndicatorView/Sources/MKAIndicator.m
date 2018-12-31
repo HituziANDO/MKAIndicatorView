@@ -23,12 +23,60 @@
 
 @implementation MKAIndicator
 
-+ (instancetype)defaultIndicator {
++ (instancetype)currentIndicator {
     static MKAIndicator *indicator = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         indicator = [MKAIndicator new];
     });
+
+    return indicator;
+}
+
++ (instancetype)defaultIndicator {
+    return [self currentIndicator];
+}
+
++ (instancetype)basicIndicatorWithActivityIndicatorViewStyle:(UIActivityIndicatorViewStyle)style {
+    MKAIndicator *indicator = [MKAIndicator currentIndicator];
+    [indicator hideForcibly];
+    indicator.indicatorType = MKAIndicatorTypeBasic;
+    [((MKAActivityIndicatorViewWrapper *) indicator.indicatorView) setActivityIndicatorViewStyleAndResize:style];
+
+    return indicator;
+}
+
++ (instancetype)customIndicatorWithIndicatorViewImage:(UIImage *)image {
+    MKAIndicator *indicator = [MKAIndicator currentIndicator];
+    [indicator hideForcibly];
+    indicator.indicatorType = MKAIndicatorTypeCustom;
+    [((MKACustomIndicatorViewWrapper *) indicator.indicatorView) setImage:image];
+
+    return indicator;
+}
+
++ (instancetype)spriteAnimationIndicatorWithIndicatorViewImages:(NSArray<UIImage *> *)images {
+    MKAIndicator *indicator = [MKAIndicator currentIndicator];
+    [indicator hideForcibly];
+    indicator.indicatorType = MKAIndicatorTypeSpriteAnimation;
+    [((MKASpriteAnimationIndicatorViewWrapper *) indicator.indicatorView) setSpriteImagesWithArray:images];
+
+    return indicator;
+}
+
++ (instancetype)spriteAnimationIndicatorWithIndicatorViewImagesFormat:(NSString *)format count:(NSInteger)count {
+    MKAIndicator *indicator = [MKAIndicator currentIndicator];
+    [indicator hideForcibly];
+    indicator.indicatorType = MKAIndicatorTypeSpriteAnimation;
+    [((MKASpriteAnimationIndicatorViewWrapper *) indicator.indicatorView) setSpriteImagesWithFormat:format count:count];
+
+    return indicator;
+}
+
++ (instancetype)onlyStatusBarIndicator {
+    MKAIndicator *indicator = [MKAIndicator currentIndicator];
+    [indicator hideForcibly];
+    indicator.indicatorType = MKAIndicatorTypeOnlyStatusBar;
 
     return indicator;
 }
@@ -176,12 +224,14 @@
     }
 }
 
-- (void)setSize:(CGSize)size {
+- (instancetype)setSize:(CGSize)size {
     if (self.isVisible) {
-        return;
+        return self;
     }
 
     self.indicatorView.view.bounds = (CGRect) { CGPointZero, size };
+
+    return self;
 }
 
 - (void)setActivityIndicatorViewStyle:(UIActivityIndicatorViewStyle)style {
@@ -224,9 +274,9 @@
     }
 }
 
-- (void)setAnimationDuration:(double)duration {
+- (instancetype)setAnimationDuration:(double)duration {
     if (self.isVisible) {
-        return;
+        return self;
     }
 
     if (self.indicatorType == MKAIndicatorTypeCustom) {
@@ -235,11 +285,13 @@
     else if (self.indicatorType == MKAIndicatorTypeSpriteAnimation) {
         ((MKASpriteAnimationIndicatorViewWrapper *) self.indicatorView).duration = duration;
     }
+
+    return self;
 }
 
-- (void)setAnimationRepeatCount:(NSInteger)repeatCount {
+- (instancetype)setAnimationRepeatCount:(NSInteger)repeatCount {
     if (self.isVisible) {
-        return;
+        return self;
     }
 
     if (self.indicatorType == MKAIndicatorTypeCustom) {
@@ -248,20 +300,24 @@
     else if (self.indicatorType == MKAIndicatorTypeSpriteAnimation) {
         ((MKASpriteAnimationIndicatorViewWrapper *) self.indicatorView).repeatCount = repeatCount;
     }
+
+    return self;
 }
 
-- (void)addBackgroundView:(UIView *)bgView {
+- (instancetype)addBackgroundView:(UIView *)bgView {
     if (self.isVisible) {
-        return;
+        return self;
     }
 
     bgView.center = CGPointMake(self.indicatorView.view.frame.size.width * .5f,
                                 self.indicatorView.view.frame.size.height * .5f);
     [self.indicatorView.view addSubview:bgView];
     [self.indicatorView.view sendSubviewToBack:bgView];
+
+    return self;
 }
 
-- (void)addBlackBackgroundView {
+- (instancetype)addBlackBackgroundView {
     // Makes a slightly enlarged background than the indicator.
     UIView *bgView = [[UIView alloc] initWithFrame:CGRectMake(0,
                                                               0,
@@ -270,7 +326,17 @@
     bgView.layer.cornerRadius = 5.f;
     bgView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:.7f];
 
-    [self addBackgroundView:bgView];
+    return [self addBackgroundView:bgView];
+}
+
+- (instancetype)alsoStatusBarIndicator {
+    if (self.isVisible) {
+        return self;
+    }
+
+    self.withStatusBarIndicator = YES;
+
+    return self;
 }
 
 @end

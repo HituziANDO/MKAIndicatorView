@@ -27,14 +27,51 @@ typedef NS_ENUM(NSInteger, MKAIndicatorType) {
  */
 @property (nonatomic) BOOL withStatusBarIndicator;
 /**
- * Specifies the type of indicator. You can not change while displaying.
+ * Specifies the type of indicator. You can not change the style while displaying.
  */
 @property (nonatomic) MKAIndicatorType indicatorType;
 
 /**
+ * Returns the singleton instance that is set current style.
+ */
++ (instancetype)currentIndicator;
+/**
  * Returns the singleton instance.
  */
-+ (instancetype)defaultIndicator;
++ (instancetype)defaultIndicator DEPRECATED_ATTRIBUTE;
+/**
+ * Returns the singleton instance of basic style. Specifies the style of the indicator.
+ *
+ * @param style UIActivityIndicatorViewStyle
+ */
++ (instancetype)basicIndicatorWithActivityIndicatorViewStyle:(UIActivityIndicatorViewStyle)style;
+/**
+ * Returns the singleton instance of custom style. Specifies the indicator image.
+ *
+ * @param image The image of the indicator.
+ */
++ (instancetype)customIndicatorWithIndicatorViewImage:(UIImage *)image;
+/**
+ * Returns the singleton instance of sprite animation style.
+ * Specifies the array of indicator images. The size of the indicator image must be unified.
+ * And specifies the animation speed.
+ *
+ * @param images The array of indicator images.
+ */
++ (instancetype)spriteAnimationIndicatorWithIndicatorViewImages:(NSArray<UIImage *> *)images;
+/**
+ * Returns the singleton instance of sprite animation style.
+ * Specifies the indicator image file name format and number of frames. The size of the indicator image must be unified.
+ * And specifies the animation speed.
+ *
+ * @param format The file name format like "indicator%ld". The file name must have a sequential number from 0.
+ * @param count Number of frames.
+ */
++ (instancetype)spriteAnimationIndicatorWithIndicatorViewImagesFormat:(NSString *)format count:(NSInteger)count;
+/**
+ * Returns the singleton instance of only status bar style.
+ */
++ (instancetype)onlyStatusBarIndicator NS_SWIFT_NAME(onlyStatusBarIndicator());
 
 /**
  * Shows / hides the indicator.
@@ -88,65 +125,69 @@ typedef NS_ENUM(NSInteger, MKAIndicatorType) {
  */
 - (void)hideForcibly;
 /**
- * Specifies the size of the indicator. You can not change while displaying.
+ * Specifies the size of the indicator. You can not change the style while displaying.
  *
  * @param size The size of the view.
  */
-- (void)setSize:(CGSize)size;
+- (instancetype)setSize:(CGSize)size;
 /**
  * Specifies the style of the indicator when MKAIndicatorType is set to MKAIndicatorTypeBasic.
- * You can not change while displaying.
+ * You can not change the style while displaying.
  *
  * @param style UIActivityIndicatorViewStyle
  */
-- (void)setActivityIndicatorViewStyle:(UIActivityIndicatorViewStyle)style;
+- (void)setActivityIndicatorViewStyle:(UIActivityIndicatorViewStyle)style DEPRECATED_ATTRIBUTE;
 /**
  * Specifies the indicator image when MKAIndicatorType is set to MKAIndicatorTypeCustom.
- * You can not change while displaying.
+ * You can not change the style while displaying.
  *
  * @param image The image of the indicator.
  */
-- (void)setCustomIndicatorViewImage:(UIImage *)image;
+- (void)setCustomIndicatorViewImage:(UIImage *)image DEPRECATED_ATTRIBUTE;
 /**
  * Specifies the array of indicator images when MKAIndicatorType is set to MKAIndicatorTypeSpriteAnimation.
- * The size of the indicator image must be unified. You can not change while displaying.
+ * The size of the indicator image must be unified. You can not change the style while displaying.
  *
  * @param images The array of indicator images.
  */
-- (void)setSpriteAnimationIndicatorViewImages:(NSArray<UIImage *> *)images;
+- (void)setSpriteAnimationIndicatorViewImages:(NSArray<UIImage *> *)images DEPRECATED_ATTRIBUTE;
 /**
  * Specifies the indicator image file name format and number of frames when MKAIndicatorType is set to MKAIndicatorTypeSpriteAnimation.
- * The size of the indicator image must be unified. You can not change while displaying.
+ * The size of the indicator image must be unified. You can not change the style while displaying.
  *
  * @param format The file name format like "indicator%ld". The file name must have a sequential number from 0.
  * @param count Number of frames.
  */
-- (void)setSpriteAnimationIndicatorViewImagesWithFormat:(NSString *)format count:(NSInteger)count;
+- (void)setSpriteAnimationIndicatorViewImagesWithFormat:(NSString *)format count:(NSInteger)count DEPRECATED_ATTRIBUTE;
 /**
  * Specifies the animation speed when MKAIndicatorType is set to MKAIndicatorTypeCustom or MKAIndicatorTypeSpriteAnimation.
- * You can not change while displaying.
+ * You can not change the style while displaying.
  *
  * @param duration Animation speed (smaller value means faster).
  */
-- (void)setAnimationDuration:(double)duration;
+- (instancetype)setAnimationDuration:(double)duration;
 /**
  * Specifies the number of iterations of animation when MKAIndicatorType is set to MKAIndicatorTypeCustom or MKAIndicatorTypeSpriteAnimation.
- * You can not change while displaying.
+ * You can not change the style while displaying.
  *
  * @param repeatCount The number of iterations of animation.
  */
-- (void)setAnimationRepeatCount:(NSInteger)repeatCount;
+- (instancetype)setAnimationRepeatCount:(NSInteger)repeatCount;
 /**
  * Adds the arbitrary background to the indicator.
- * The added background is set on the back. You can not change while displaying.
+ * The added background is set on the back. You can not change the style while displaying.
  
  @param bgView The background view.
  */
-- (void)addBackgroundView:(UIView *)bgView;
+- (instancetype)addBackgroundView:(UIView *)bgView;
 /**
- * Adds the black background to the indicator. You can not change while displaying.
+ * Adds the black background to the indicator. You can not change the style while displaying.
  */
-- (void)addBlackBackgroundView;
+- (instancetype)addBlackBackgroundView;
+/**
+ * The indicator is also displayed on the status bar. You can not change the style while displaying.
+ */
+- (instancetype)alsoStatusBarIndicator NS_SWIFT_NAME(alsoStatusBarIndicator());
 
 @end
 
