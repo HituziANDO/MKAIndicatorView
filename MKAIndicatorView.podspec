@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "MKAIndicatorView"
-  s.version      = "1.1"
+  s.version      = "2.0.0"
   s.summary      = "MKAIndicatorView is the simple and powerful indicator view."
 
   # This description is used to generate tags and improve search results.
