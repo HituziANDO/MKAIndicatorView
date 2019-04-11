@@ -67,8 +67,7 @@ iOSInjectionProject/
 
 # App
 #
-MKAToastView/build
-MKAToastView/Framework
-Sample/ObjC/Framework/MKAIndicatorView.framework
-Sample/Swift/Framework/MKAIndicatorView.framework
+MKAIndicatorView/build
+#Sample/ObjC/Framework/MKAIndicatorView.framework
+#Sample/Swift/Framework/MKAIndicatorView.framework
 MKAIndicatorView/Framework

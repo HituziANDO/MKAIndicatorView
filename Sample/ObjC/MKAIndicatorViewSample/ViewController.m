@@ -26,57 +26,67 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    // Set default indicator.
+    MKAIndicator *indicator = [MKAIndicator basicIndicatorWithActivityIndicatorViewStyle:UIActivityIndicatorViewStyleGray];
+    [MKAIndicator setDefaultIndicator:indicator];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
 
     // When leaving this screen, forcibly terminate the indicator.
-    [[MKAIndicator currentIndicator] hideForcibly];
+    [[MKAIndicator defaultIndicator] hideForcibly];
 }
 
 #pragma mark - IBAction
 
 - (IBAction)basicButtonClicked:(id)sender {
     // Show basic indicator. Also display on the status bar.
-    [[[[MKAIndicator basicIndicatorWithActivityIndicatorViewStyle:UIActivityIndicatorViewStyleWhiteLarge]
-                     addBlackBackgroundView]
-                     alsoStatusBarIndicator]
-                     showInView:self.view withTouchDisabled:NO];
+    MKAIndicator *indicator = [[[MKAIndicator basicIndicatorWithActivityIndicatorViewStyle:UIActivityIndicatorViewStyleWhiteLarge]
+                                              addBlackBackgroundView]
+                                              alsoStatusBarIndicator];
+    [MKAIndicator setDefaultIndicator:indicator];
+    [[MKAIndicator defaultIndicator] showInView:self.view withTouchDisabled:NO];
 }
 
 - (IBAction)customButtonClicked:(id)sender {
     // Show custom indicator.
-    [[[MKAIndicator customIndicatorWithIndicatorViewImage:[UIImage imageNamed:@"spinner"]]
-                    setAnimationDuration:1.0]
-                    showInView:self.view withTouchDisabled:NO];
+    MKAIndicator *indicator = [[MKAIndicator customIndicatorWithIndicatorViewImage:[UIImage imageNamed:@"spinner"]]
+                                             setAnimationDuration:1.0];
+    [MKAIndicator setDefaultIndicator:indicator];
+    [[MKAIndicator defaultIndicator] showInView:self.view withTouchDisabled:NO];
 }
 
 - (IBAction)spriteAnimationButtonClicked:(id)sender {
     // Show sprite animation indicator.
-    [[[MKAIndicator spriteAnimationIndicatorWithIndicatorViewImagesFormat:@"indicator%zd" count:8]
-                    setAnimationDuration:.5]
-                    showInView:self.view withTouchDisabled:NO];
+    MKAIndicator *indicator = [[MKAIndicator spriteAnimationIndicatorWithIndicatorViewImagesFormat:@"indicator%zd"
+                                                                                             count:8]
+                                             setAnimationDuration:.5];
+    [MKAIndicator setDefaultIndicator:indicator];
+    [[MKAIndicator defaultIndicator] showInView:self.view withTouchDisabled:NO];
 }
 
 - (IBAction)touchDisabledButtonClicked:(id)sender {
     // Show basic indicator. Disable user touch actions when displaying.
-    [[MKAIndicator basicIndicatorWithActivityIndicatorViewStyle:UIActivityIndicatorViewStyleGray]
-                   showInView:self.view withTouchDisabled:YES];
+    MKAIndicator *indicator = [MKAIndicator basicIndicatorWithActivityIndicatorViewStyle:UIActivityIndicatorViewStyleGray];
+    [MKAIndicator setDefaultIndicator:indicator];
+    [[MKAIndicator defaultIndicator] showInView:self.view withTouchDisabled:YES];
 
     [NSTimer scheduledTimerWithTimeInterval:3.0 repeats:NO block:^(NSTimer *_Nonnull timer) {
-        [[MKAIndicator currentIndicator] hide];
+        [[MKAIndicator defaultIndicator] hide];
     }];
 }
 
 - (IBAction)onlyStatusBarButtonClicked:(id)sender {
     // Show indicator on the status bar only.
-    [[MKAIndicator onlyStatusBarIndicator] showInView:self.view withTouchDisabled:NO];
+    MKAIndicator *indicator = [MKAIndicator onlyStatusBarIndicator];
+    [MKAIndicator setDefaultIndicator:indicator];
+    [[MKAIndicator defaultIndicator] showInView:self.view withTouchDisabled:NO];
 }
 
 - (IBAction)stopButtonClicked:(id)sender {
     // Hide if needed.
-    [[MKAIndicator currentIndicator] hide];
+    [[MKAIndicator defaultIndicator] hide];
 }
 
 @end

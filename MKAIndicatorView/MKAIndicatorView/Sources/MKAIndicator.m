@@ -34,10 +34,33 @@
 
 @property (nonatomic) id <MKAIndicatorInterface> indicatorView;
 @property (nonatomic) NSUInteger count;
+@property (nonatomic) MKAIndicatorType indicatorType;
 
 @end
 
 @implementation MKAIndicator
+
+static MKAIndicator *_defaultIndicator = nil;
+
++ (void)setDefaultIndicator:(MKAIndicator *)indicator {
+    @synchronized (self) {
+        [_defaultIndicator hideForcibly];
+
+        _defaultIndicator = indicator;
+    }
+}
+
++ (instancetype)defaultIndicator {
+    @synchronized (self) {
+        if (!_defaultIndicator) {
+            @throw [NSException exceptionWithName:NSInternalInconsistencyException
+                                           reason:@"Default indicator is not set. Execute `+setDefaultIndicator:` method before execute `+defaultIndicator` method."
+                                         userInfo:nil];
+        }
+
+        return _defaultIndicator;
+    }
+}
 
 + (instancetype)currentIndicator {
     static MKAIndicator *indicator = nil;
@@ -49,13 +72,8 @@
     return indicator;
 }
 
-+ (instancetype)defaultIndicator {
-    return [self currentIndicator];
-}
-
 + (instancetype)basicIndicatorWithActivityIndicatorViewStyle:(UIActivityIndicatorViewStyle)style {
-    MKAIndicator *indicator = [MKAIndicator currentIndicator];
-    [indicator hideForcibly];
+    MKAIndicator *indicator = [MKAIndicator new];
     indicator.indicatorType = MKAIndicatorTypeBasic;
     [((MKAActivityIndicatorViewWrapper *) indicator.indicatorView) setActivityIndicatorViewStyleAndResize:style];
 
@@ -63,8 +81,7 @@
 }
 
 + (instancetype)customIndicatorWithIndicatorViewImage:(UIImage *)image {
-    MKAIndicator *indicator = [MKAIndicator currentIndicator];
-    [indicator hideForcibly];
+    MKAIndicator *indicator = [MKAIndicator new];
     indicator.indicatorType = MKAIndicatorTypeCustom;
     [((MKACustomIndicatorViewWrapper *) indicator.indicatorView) setImage:image];
 
@@ -72,8 +89,7 @@
 }
 
 + (instancetype)spriteAnimationIndicatorWithIndicatorViewImages:(NSArray<UIImage *> *)images {
-    MKAIndicator *indicator = [MKAIndicator currentIndicator];
-    [indicator hideForcibly];
+    MKAIndicator *indicator = [MKAIndicator new];
     indicator.indicatorType = MKAIndicatorTypeSpriteAnimation;
     [((MKASpriteAnimationIndicatorViewWrapper *) indicator.indicatorView) setSpriteImagesWithArray:images];
 
@@ -81,8 +97,7 @@
 }
 
 + (instancetype)spriteAnimationIndicatorWithIndicatorViewImagesFormat:(NSString *)format count:(NSInteger)count {
-    MKAIndicator *indicator = [MKAIndicator currentIndicator];
-    [indicator hideForcibly];
+    MKAIndicator *indicator = [MKAIndicator new];
     indicator.indicatorType = MKAIndicatorTypeSpriteAnimation;
     [((MKASpriteAnimationIndicatorViewWrapper *) indicator.indicatorView) setSpriteImagesWithFormat:format count:count];
 
@@ -90,8 +105,7 @@
 }
 
 + (instancetype)onlyStatusBarIndicator {
-    MKAIndicator *indicator = [MKAIndicator currentIndicator];
-    [indicator hideForcibly];
+    MKAIndicator *indicator = [MKAIndicator new];
     indicator.indicatorType = MKAIndicatorTypeOnlyStatusBar;
 
     return indicator;
@@ -124,10 +138,6 @@
 }
 
 - (void)setIndicatorType:(MKAIndicatorType)indicatorType {
-    if (self.isVisible) {
-        return;
-    }
-
     _indicatorType = indicatorType;
 
     if (indicatorType == MKAIndicatorTypeCustom) {

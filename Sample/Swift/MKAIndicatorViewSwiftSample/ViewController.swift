@@ -21,53 +21,63 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // Set default indicator.
+        let indicator = MKAIndicator.basicIndicator(with: .gray)
+        MKAIndicator.setDefault(indicator)
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
 
         // When leaving this screen, forcibly terminate the indicator.
-        MKAIndicator.current().hideForcibly()
+        MKAIndicator.default().hideForcibly()
     }
 
     /// MARK: - IBAction
 
     @IBAction func basicButtonClicked(_ sender: Any) {
         // Show basic indicator. Also display on the status bar.
-        MKAIndicator.basicIndicator(with: .whiteLarge)
-                    .addBlackBackgroundView()
-                    .alsoStatusBarIndicator()
-                    .show(in: self.view, withTouchDisabled: false)
+        let indicator = MKAIndicator.basicIndicator(with: .whiteLarge)
+                                    .addBlackBackgroundView()
+                                    .alsoStatusBarIndicator()
+        MKAIndicator.setDefault(indicator)
+        MKAIndicator.default().show(in: self.view, withTouchDisabled: false)
     }
 
     @IBAction func customButtonClicked(_ sender: Any) {
         // Show custom indicator.
-        MKAIndicator.customIndicator(withIndicatorViewImage: UIImage(named: "spinner")!)
-                    .setAnimationDuration(1.0)
-                    .show(in: self.view, withTouchDisabled: false)
+        let indicator = MKAIndicator.customIndicator(withIndicatorViewImage: UIImage(named: "spinner")!)
+                                    .setAnimationDuration(1.0)
+        MKAIndicator.setDefault(indicator)
+        MKAIndicator.default().show(in: self.view, withTouchDisabled: false)
     }
 
     @IBAction func spriteAnimationButtonClicked(_ sender: Any) {
         // Show sprite animation indicator.
-        MKAIndicator.spriteAnimationIndicator(withIndicatorViewImagesFormat: "indicator%zd", count: 8)
-                    .setAnimationDuration(0.5)
-                    .show(in: self.view, withTouchDisabled: false)
+        let indicator = MKAIndicator.spriteAnimationIndicator(withIndicatorViewImagesFormat: "indicator%zd", count: 8)
+                                    .setAnimationDuration(0.5)
+        MKAIndicator.setDefault(indicator)
+        MKAIndicator.default().show(in: self.view, withTouchDisabled: false)
     }
 
     @IBAction func touchDisabledButtonClicked(_ sender: Any) {
         // Show basic indicator. Disable user touch actions when displaying.
-        MKAIndicator.basicIndicator(with: .gray).show(in: self.view, withTouchDisabled: true)
+        let indicator = MKAIndicator.basicIndicator(with: .gray)
+        MKAIndicator.setDefault(indicator)
+        MKAIndicator.default().show(in: self.view, withTouchDisabled: true)
 
-        Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false) { timer in MKAIndicator.current().hide() }
+        Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false) { timer in MKAIndicator.default().hide() }
     }
 
     @IBAction func onlyStatusBarButtonClicked(_ sender: Any) {
         // Show indicator on the status bar only.
-        MKAIndicator.onlyStatusBarIndicator().show(in: self.view, withTouchDisabled: false)
+        let indicator = MKAIndicator.onlyStatusBarIndicator()
+        MKAIndicator.setDefault(indicator)
+        MKAIndicator.default().show(in: self.view, withTouchDisabled: false)
     }
 
     @IBAction func stopButtonClicked(_ sender: Any) {
         // Hide if needed.
-        MKAIndicator.current().hide()
+        MKAIndicator.default().hide()
     }
 }

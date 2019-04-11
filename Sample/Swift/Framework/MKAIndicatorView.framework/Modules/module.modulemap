@@ -1,0 +1,6 @@
+framework module MKAIndicatorView {
+  umbrella header "MKAIndicatorView.h"
+
+  export *
+  module * { export * }
+}
