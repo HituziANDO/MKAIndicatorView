@@ -3,9 +3,7 @@ MKAIndicatorView
 
 ***MKAIndicatorView makes you to create the powerful indicator view easily.***
 
-<img src="./README/images/basic.gif" width="200">
-<img src="./README/images/custom.gif" width="200">
-<img src="./README/images/sprite_animation.gif" width="200">
+<img src="./README/images/basic.gif" width="200"> <img src="./README/images/custom.gif" width="200"> <img src="./README/images/sprite_animation.gif" width="200">
 
 ## Include in your iOS app
 
@@ -45,14 +43,19 @@ pod "MKAIndicatorView"
 	**Objective-C**
 	
 	```objc
-	[[MKAIndicator basicIndicatorWithActivityIndicatorViewStyle:UIActivityIndicatorViewStyleGray]
-                   showInView:self.view withTouchDisabled:NO];
+	// Set default indicator.
+	MKAIndicator *indicator = [MKAIndicator basicIndicatorWithActivityIndicatorViewStyle:UIActivityIndicatorViewStyleGray];
+   [MKAIndicator setDefaultIndicator:indicator];
+	[[MKAIndicator defaultIndicator] showInView:self.view withTouchDisabled:NO];
 	```
 	
 	**Swift**
 	
 	```swift
-	MKAIndicator.basicIndicator(with: .gray).show(in: self.view, withTouchDisabled: false)
+	// Set default indicator.
+	let indicator = MKAIndicator.basicIndicator(with: .gray)
+	MKAIndicator.setDefault(indicator)
+	MKAIndicator.default().show(in: self.view, withTouchDisabled: false)
 	```
 
 3. Hide the indicator
@@ -60,13 +63,13 @@ pod "MKAIndicatorView"
 	**Objective-C**
 	
 	```objc
-	[[MKAIndicator currentIndicator] hide];
+	[[MKAIndicator defaultIndicator] hide];
 	```
 	
 	**Swift**
 	
 	```swift
-	MKAIndicator.current().hide()
+	MKAIndicator.default().hide()
 	```
 
 ### Basic Type
@@ -75,18 +78,20 @@ pod "MKAIndicatorView"
 
 ```objc
 // Show basic indicator.
-[[[MKAIndicator basicIndicatorWithActivityIndicatorViewStyle:UIActivityIndicatorViewStyleWhiteLarge]
-                addBlackBackgroundView]
-                showInView:self.view withTouchDisabled:NO];
+MKAIndicator *indicator = [[MKAIndicator basicIndicatorWithActivityIndicatorViewStyle:UIActivityIndicatorViewStyleWhiteLarge]
+                                         addBlackBackgroundView];
+[MKAIndicator setDefaultIndicator:indicator];
+[[MKAIndicator defaultIndicator] showInView:self.view withTouchDisabled:NO];
 ```
 
 **Swift**
 
 ```swift
 // Show basic indicator.
-MKAIndicator.basicIndicator(with: .whiteLarge)
-            .addBlackBackgroundView()
-            .show(in: self.view, withTouchDisabled: false)
+let indicator = MKAIndicator.basicIndicator(with: .whiteLarge)
+                            .addBlackBackgroundView()
+MKAIndicator.setDefault(indicator)
+MKAIndicator.default().show(in: self.view, withTouchDisabled: false)
 ```
 
 ### Custom Type
@@ -95,18 +100,20 @@ MKAIndicator.basicIndicator(with: .whiteLarge)
 
 ```objc
 // Show custom indicator.
-[[[MKAIndicator customIndicatorWithIndicatorViewImage:[UIImage imageNamed:@"spinner"]]
-                setAnimationDuration:1.0]
-                showInView:self.view withTouchDisabled:NO];
+MKAIndicator *indicator = [[MKAIndicator customIndicatorWithIndicatorViewImage:[UIImage imageNamed:@"spinner"]]
+                                         setAnimationDuration:1.0];
+[MKAIndicator setDefaultIndicator:indicator];
+[[MKAIndicator defaultIndicator] showInView:self.view withTouchDisabled:NO];
 ```
 
 **Swift**
 
 ```swift
 // Show custom indicator.
-MKAIndicator.customIndicator(withIndicatorViewImage: UIImage(named: "spinner")!)
-            .setAnimationDuration(1.0)
-            .show(in: self.view, withTouchDisabled: false)
+let indicator = MKAIndicator.customIndicator(withIndicatorViewImage: UIImage(named: "spinner")!)
+                            .setAnimationDuration(1.0)
+MKAIndicator.setDefault(indicator)
+MKAIndicator.default().show(in: self.view, withTouchDisabled: false)
 ```
 
 ### Sprite Animation Type
@@ -115,18 +122,20 @@ MKAIndicator.customIndicator(withIndicatorViewImage: UIImage(named: "spinner")!)
 
 ```objc
 // Show sprite animation indicator.
-[[[MKAIndicator spriteAnimationIndicatorWithIndicatorViewImagesFormat:@"indicator%zd" count:8]
-                setAnimationDuration:.5]
-                showInView:self.view withTouchDisabled:NO];
+MKAIndicator *indicator = [[MKAIndicator spriteAnimationIndicatorWithIndicatorViewImagesFormat:@"indicator%zd" count:8]
+                                         setAnimationDuration:.5];
+[MKAIndicator setDefaultIndicator:indicator];
+[[MKAIndicator defaultIndicator] showInView:self.view withTouchDisabled:NO];
 ```
 
 **Swift**
 
 ```swift
 // Show sprite animation indicator.
-MKAIndicator.spriteAnimationIndicator(withIndicatorViewImagesFormat: "indicator%zd", count: 8)
-            .setAnimationDuration(0.5)
-            .show(in: self.view, withTouchDisabled: false)
+let indicator = MKAIndicator.spriteAnimationIndicator(withIndicatorViewImagesFormat: "indicator%zd", count: 8)
+                            .setAnimationDuration(0.5)
+MKAIndicator.setDefault(indicator)
+MKAIndicator.default().show(in: self.view, withTouchDisabled: false)
 ```
 
 ### Only Status Bar Type
@@ -135,14 +144,20 @@ MKAIndicator.spriteAnimationIndicator(withIndicatorViewImagesFormat: "indicator%
 
 ```objc
 // Show indicator on the status bar only.
-[[MKAIndicator onlyStatusBarIndicator] showInView:self.view withTouchDisabled:NO];
+MKAIndicator *indicator = [MKAIndicator onlyStatusBarIndicator];
+[MKAIndicator setDefaultIndicator:indicator];
+[[MKAIndicator defaultIndicator] showInView:self.view withTouchDisabled:NO];
 ```
 
 **Swift**
 
 ```swift
 // Show indicator on the status bar only.
-MKAIndicator.onlyStatusBarIndicator().show(in: self.view, withTouchDisabled: false)
+let indicator = MKAIndicator.onlyStatusBarIndicator()
+MKAIndicator.setDefault(indicator)
+MKAIndicator.default().show(in: self.view, withTouchDisabled: false)
 ```
+
+**[KNOWN ISSUE]** The onlyStatusBarIndicator is not working for iPhone X series.
 
 More info, see my [sample project](https://github.com/HituziANDO/MKAIndicatorView/tree/master/Sample).
