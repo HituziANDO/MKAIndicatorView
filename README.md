@@ -18,7 +18,7 @@ MKAIndicatorView makes you to create the powerful indicator view easily. See fol
 ## Get Started
 ### Install Framework to Your iOS App
 
-You have two way to install this framework.
+You have two ways to install this framework.
 
 #### 1. CocoaPods
 
@@ -180,5 +180,6 @@ MKAIndicator *indicator = [MKAIndicator onlyStatusBarIndicator];
 
 **[KNOWN ISSUE]** The onlyStatusBarIndicator is not working for iPhone X series.
 
---
+----
+
 More info, see my [sample project](https://github.com/HituziANDO/MKAIndicatorView/tree/master/Sample).
