@@ -1,3 +1,5 @@
+**[NOTE]** This project moved to https://github.com/HituziANDO/MKAPopupKit
+
 MKAIndicatorView
 ===
 
